@@ -1,4 +1,5 @@
 from sklearn.tree import _tree
+import numpy as np
 
 class TreeGenerator:
 
