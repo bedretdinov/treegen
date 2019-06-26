@@ -4,7 +4,7 @@ class TreeGenerator:
     def toPython(tree, feature_names):
         tree_ = tree.tree_
         feature_name = [
-            feature_names[i] if i != _tree.TREE_UNDEFINED else "undefined!"
+            feature_names[i] if i != tree_.TREE_UNDEFINED else "undefined!"
             for i in tree_.feature
         ]
 
@@ -12,7 +12,7 @@ class TreeGenerator:
 
         def recurse(node, depth):
             indent = "  " * depth
-            if tree_.feature[node] != _tree.TREE_UNDEFINED:
+            if tree_.feature[node] != tree_.TREE_UNDEFINED:
                 name = feature_name[node]
                 threshold = tree_.threshold[node]
                 core_result.append("{}if({} <= {}):".format(indent, name, threshold))
@@ -30,7 +30,7 @@ class TreeGenerator:
     def toPHP(tree, feature_names):
         tree_ = tree.tree_
         feature_name = [
-            feature_names[i] if i != _tree.TREE_UNDEFINED else "undefined!"
+            feature_names[i] if i != tree_.TREE_UNDEFINED else "undefined!"
             for i in tree_.feature
         ]
 
@@ -39,7 +39,7 @@ class TreeGenerator:
         def recurse(node, depth):
             indent = "  " * depth
 
-            if tree_.feature[node] != _tree.TREE_UNDEFINED:
+            if tree_.feature[node] != tree_.TREE_UNDEFINED:
                 name = feature_name[node]
                 threshold = tree_.threshold[node]
                 core_result.append("{}if({} <= {}){{".format(indent, name, threshold))
@@ -58,7 +58,7 @@ class TreeGenerator:
     def toSQL(tree, feature_names):
         tree_ = tree.tree_
         feature_name = [
-            feature_names[i] if i != _tree.TREE_UNDEFINED else "undefined!"
+            feature_names[i] if i != tree_.TREE_UNDEFINED else "undefined!"
             for i in tree_.feature
         ]
 
@@ -67,7 +67,7 @@ class TreeGenerator:
         def recurse(node, depth):
             indent = "" * depth
 
-            if tree_.feature[node] != _tree.TREE_UNDEFINED:
+            if tree_.feature[node] != tree_.TREE_UNDEFINED:
                 name = feature_name[node]
                 threshold = tree_.threshold[node]
                 core_result.append("{}if({} <= {},".format(indent, name, threshold))
