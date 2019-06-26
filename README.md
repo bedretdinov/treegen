@@ -11,7 +11,7 @@ the module for generate if else tree for intergation your model to mysql or php
 
 ### generate SQL 
 ```python
-from treegen import TreeGenerator
+from treegen.generator import ClassifierTreeGenerator
 from sklearn.datasets import load_iris
 from sklearn import tree
 iris = load_iris()
@@ -36,7 +36,7 @@ if(petal_width_sm <= 0.800000011920929, 0  , if(petal_width_sm <= 1.75,if(petal_
 
 ### generate PHP
 ```python
-from treegen import TreeGenerator
+from treegen.generator import ClassifierTreeGenerator
 from sklearn.datasets import load_iris
 from sklearn import tree
 iris = load_iris()
