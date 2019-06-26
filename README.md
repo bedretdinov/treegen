@@ -9,7 +9,7 @@ the module for generate if else tree for intergation your model to mysql or php
 ```
 
 
-### generate SQL
+### generate SQL 
 ```python
 from treegen import TreeGenerator
 from sklearn.datasets import load_iris
@@ -22,7 +22,7 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(iris.data, iris.target)
 
 
-TreeGenerator.toSQL(clf, iris.feature_names)
+ClassifierTreeGenerator.toSQL(clf, iris.feature_names)
 
 
 ```
@@ -47,7 +47,7 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(iris.data, iris.target)
 
 
-TreeGenerator.toPHP(clf, iris.feature_names) 
+ClassifierTreeGenerator.toPHP(clf, iris.feature_names) 
 ```
 
 ### result PHP
