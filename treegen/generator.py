@@ -51,7 +51,7 @@ class ClassifierTreeGenerator:
                 recurse(tree_.children_right[node], depth + 1)
                 core_result.append('{}}}'.format(indent))
             else:
-                core_result.append("{}  return {} ".format(indent, np.argmax(tree_.value[node])))
+                core_result.append("{}  return {}; ".format(indent, tree_.value[node][0]))
 
         recurse(0, 1)
 
