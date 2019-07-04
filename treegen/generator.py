@@ -50,8 +50,8 @@ class ClassifierTreeGenerator:
                 core_result.append("{} }}else{{  ".format(indent, name, threshold))
                 recurse(tree_.children_right[node], depth + 1)
                 core_result.append('{}}}'.format(indent))
-            else:
-                core_result.append("{}  return {}; ".format(indent, tree_.value[node][0]))
+            else: 
+                core_result.append("{}  return {}; ".format(indent, int(tree_.value[node][0]*100)))
 
         recurse(0, 1)
 
